@@ -3,8 +3,8 @@ package Restaurante_Coso;
 public class Pedidos {
     private Productos[] productos;
     private static final int max_productos = 10;
-    private int cantidadProductos; //contador
-    private boolean tipo_pedido;
+    private int cantidadProductos; //contador Trate de usar solo un tipo, o camelCase o snake_case, no los dos.
+    private boolean tipo_pedido; //puede hacer este Tipo_orden en vez de boolean, asi saca algo que no sea t o f.
 
     public Pedidos() {
         productos = new Productos[max_productos];
