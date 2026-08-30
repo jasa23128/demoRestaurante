@@ -1,3 +1,5 @@
+package Restaurante_Coso;
+
 public class Mesas{
     private int numero;
     private String cliente_mesa;
