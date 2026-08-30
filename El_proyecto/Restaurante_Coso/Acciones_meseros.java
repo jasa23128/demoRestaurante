@@ -1,3 +1,5 @@
+package Restaurante_Coso;
+
 public interface Acciones_meseros {
     void tomar_pedido();
     void entregar_pedido();
