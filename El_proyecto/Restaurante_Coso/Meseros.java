@@ -1,3 +1,5 @@
+package Restaurante_Coso;
+
 public class Meseros implements Acciones_meseros {
     private int id;
     private int mesas_atendidas;
