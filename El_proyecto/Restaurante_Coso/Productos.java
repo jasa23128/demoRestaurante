@@ -2,7 +2,7 @@ package Restaurante_Coso;
 
 public abstract class Productos {
     protected double precio;
-    protected  int codigo;
+    protected int codigo;
     protected String tipo;
     protected boolean disponibilidad;
 
@@ -15,4 +15,15 @@ public abstract class Productos {
 
     public abstract boolean disponibilidad_producto();
 
+    public double getPrecio() {
+        return precio;
+    }
+
+    public int getCodigo() {
+        return codigo;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
 }
