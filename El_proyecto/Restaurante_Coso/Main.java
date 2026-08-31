@@ -30,7 +30,10 @@ public class Main {
 
         mesero1.atender_mesa(mesa1, "Cliente pidió agua aparte");
 
+        Turno turno = new Turno();
+
         Pedidos pedido1 = new Pedidos(Tipo_orden.EN_RESTAURANTE);
+        turno.agregarPedido(pedido1);
 
         try {
             mesero1.tomar_pedido(pedido1, menu[0]);
@@ -64,5 +67,6 @@ public class Main {
 
         System.out.println(pedido1);
         System.out.println("Total vendido por el mesero " + mesero1.getId() + ": $" + mesero1.getTotalVentas());
+        System.out.println("Producto mas pedido del turno: " + turno.productoMasVendido());
     }
 }
