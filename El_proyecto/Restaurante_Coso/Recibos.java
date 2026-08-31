@@ -1,8 +1,7 @@
 package Restaurante_Coso;
 
 import java.util.Arrays;
-
-// Clase inmutable
+// clase inmutable
 public final class Recibos {
 
     private final String[] infoCalculoPedido;
@@ -19,7 +18,6 @@ public final class Recibos {
         this.totalCalculado = totalCalculado;
     }
 
-//sobrecarga
     public Recibos(Pedidos pedido) {
         if (pedido != null) {
             this.subtotal = Calculo.calcularSubtotal(pedido);
@@ -45,7 +43,15 @@ public final class Recibos {
         String[] detalle = new String[cantidad];
         for (int i = 0; i < cantidad; i++) {
             if (productos[i] != null) {
-                detalle[i] = productos[i].getNombre() + " - $" + productos[i].getPrecio();
+                String nombre;
+                if (productos[i] instanceof Platos_de_comido) {
+                    nombre = ((Platos_de_comido) productos[i]).getNombre();
+                } else if (productos[i] instanceof Bebidas) {
+                    nombre = ((Bebidas) productos[i]).getNombre();
+                } else {
+                    nombre = "Producto";
+                }
+                detalle[i] = nombre + " - $" + productos[i].getPrecio();
             } else {
                 detalle[i] = "Producto sin detalle";
             }
@@ -53,7 +59,6 @@ public final class Recibos {
         return detalle;
     }
 
-    // Getters
     public String[] getInfoCalculoPedido() {
         return infoCalculoPedido != null
                 ? Arrays.copyOf(infoCalculoPedido, infoCalculoPedido.length)
